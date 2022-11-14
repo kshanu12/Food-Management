@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        body{
+            background-image: url("/login-background.jpg");
+            background-size: 100vw 100vh ;
+        }
+
+        #white_box{
+            position: absolute;
+            background: rgb(224, 224, 224);
+            width:55vw;
+            height:60vh;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 10px;
+            display: flex;
+            box-shadow: 10px 20px 20px #000;
+        }
+
+        #left{
+            width: 50%;
+            height: inherit;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            border-radius: 10px 0 0 10px;
+            background-image: url("/login-gif.gif");
+        }
+
+        #right{
+            margin:auto;
+            align-items: center;
+            text-align: center;
+        }
+
+        .mar{
+            margin-bottom: 20px;
+        }
+
+        .pad{
+            padding: 15px 30px;
+            background: #fff;
+            box-shadow: 5px 10px 10px #555;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="white_box">
+        <div id="left">
+
+        </div>
+        <div id="right">
+            <form action="/admin_login" method="post">
+                <h2 style="padding-bottom:10px;">Admin Login</h2>
+                <p style="text-align: left;margin-bottom: -2px;padding-left: 10px;">Email ID<span style="color: red;">*</span></p>
+                <div class="form-floating" style="z-index: 2;margin-bottom: 10px;border-bottom-right-radius: 0;border-bottom-left-radius: 0;">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
+                </div>
+                <p style="text-align: left;margin-bottom: -2px;padding-left: 10px;">Password<span style="color: red;">*</span></p>
+                <div class="form-floating" style="z-index: 2;margin-bottom: 10px;border-bottom-right-radius: 0;border-bottom-left-radius: 0;">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Keep it confidential!!" required>
+                </div>
+                <span style="color: red;"><%=message%></span><br>
+                <button style="margin-top:5px;" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

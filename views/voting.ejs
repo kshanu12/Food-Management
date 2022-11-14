@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        body{
+            background-image: url("/admin-background.jpg");
+            background-size:100vw 100vh ;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        nav{
+            background:rgb(46, 54, 62);
+            height: 80px;
+        }
+
+        #menu{
+            position: absolute;
+            top: 35%;
+            left: 40%;
+            translate: transform(-50%,-50%);
+            background: rgba(255,255,255,.3);
+            width: 45%;
+            height: 60%;
+            text-align: center;
+            overflow:scroll;
+            border-radius: 20px;
+        }
+
+        .siz{
+            width: 14px;
+            height: 14px;
+            margin:7px;
+        }
+
+        .mar{
+            margin: 20px;
+        }
+
+    </style>
+    <script>
+        function check(browser) {
+            document.getElementById("val").value=browser;
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <span style="font-size: 50px; margin-left:10px;">🍔</span>
+        <span style="font-size: 25px; margin-top:15px ;margin-right: 20px;color: aliceblue;">Vote for Breakfast</span>
+        <span style="float:right;font-size: 25px; margin-top:20px ;margin-right: 20px;"><a href="/" style="color: white;text-decoration:none">Log Out</a></span>
+    </nav>
+    <div id="menu">
+        <h1>Enter Breakfast menu</h1>
+        <form action="/voted" method="post">
+            <% project.forEach((ele)=>{%>
+                <ul class="row" style="list-style-type: none; display:flex;justify-content: space-around;">
+                    <li class="col-1" style="font-size: 25px; "><input type="radio" name="food" class="siz" value=<%=ele.b_id%> onclick="check(this.value)"> <%=ele.b_name%></li>
+                </ul>
+            <%});%>
+
+            <button style="margin-top:5px;margin-bottom: 10px;" class="btn btn-primary">Vote</button>
+            <input id="val" hidden name="opted" value="" type="number" value="">
+        </form>
+    </div>
+</body>
+</html>

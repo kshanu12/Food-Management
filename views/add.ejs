@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        body{
+            background-image: url("/admin-background.jpg");
+            background-size:100vw 100vh ;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        nav{
+            background:rgb(46, 54, 62);
+            height: 80px;
+            color: aliceblue;
+        }
+
+        #menu{
+            position: absolute;
+            top: 35%;
+            left: 40%;
+            translate: transform(-50%,-50%);
+            background: rgba(255,255,255,.3);
+            width: 45%;
+            height: 60%;
+            text-align: center;
+            overflow:scroll;
+            border-radius: 20px;
+        }
+
+        .mar{
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <span style="font-size: 50px; margin-left:10px;">🍔</span>
+        <span style="font-size: 25px; margin-top:15px ;margin-right: 20px;">Vote for Breakfast</span>
+        <span style="float:right;font-size: 25px; margin-top:20px ;margin-right: 20px;"><a href="/" style="color: white;text-decoration:none">Log Out</a></span>
+    </nav>
+    <div id="menu">
+        <h1>Enter Breakfast menu</h1>
+        <form action="/add" method="post">
+            <ul style="font-size:20px;list-style-type:none">
+                <li class="mar"><input type="text" name="name1" style="border-radius: 5px;"></li>
+                <li class="mar"><input type="text" name="name2" style="border-radius: 5px;"></li>
+                <li class="mar"><input type="text" name="name3" style="border-radius: 5px;"></li>
+                <li class="mar"><input type="text" name="name4" style="border-radius: 5px;"></li>
+                <li class="mar"><input type="text" name="name5" style="border-radius: 5px;"></li>
+            </ul>
+
+            <button style="margin-top:5px;margin-bottom: 10px;" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+</body>
+</html>

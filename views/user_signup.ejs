@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        body{
+            background-image: url("/login-background.jpg");
+            background-size: 100vw 100vh ;
+        }
+
+        #white_box{
+            position: absolute;
+            background: rgb(224, 224, 224);
+            width:55vw;
+            height:60vh;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 10px;
+            display: flex;
+            box-shadow: 10px 20px 20px #000;
+        }
+
+        #left{
+            width: 50%;
+            height: inherit;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            border-radius: 10px 0 0 10px;
+            background-image: url("/login-gif.gif");
+        }
+
+        #right{
+            margin:auto;
+            align-items: center;
+            text-align: center;
+        }
+
+        .mar{
+            margin-bottom: 20px;
+        }
+
+        .pad{
+            padding: 15px 30px;
+            background: #fff;
+            box-shadow: 5px 10px 10px #555;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="white_box">
+        <div id="left">
+
+        </div>
+        <div id="right">
+            <form action="/user_signup" method="post">
+                <h2 style="padding-bottom:10px;">Sign Up</h2>
+                <p style="text-align: left;margin-bottom: -2px;padding-left: 10px;">Name<span style="color: red;">*</span></p>
+                <div class="form-floating" style="z-index: 2;margin-bottom: 10px;border-bottom-right-radius: 0;border-bottom-left-radius: 0;">
+                    <label for="name"></label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Abc" required>
+                </div>
+                <p style="text-align: left;margin-bottom: -2px;padding-left: 10px;">Email ID<span style="color: red;">*</span></p>
+                <div class="form-floating" style="z-index: 2;margin-bottom: 10px;border-bottom-right-radius: 0;border-bottom-left-radius: 0;">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
+                </div>
+                <p style="text-align: left;margin-bottom: -1.7px;padding-left: 10px;">Age<span style="color: red;">*</span></p>
+                <div class="form-floating" style="z-index: 2;margin-bottom: 10px;border-top-left-radius: 0;border-top-right-radius: 0;">
+                    <input type="number" class="form-control" name="age" id="age" placeholder="age" min="1" max="99" required>
+                </div>                    
+                <p style="text-align: left;margin-bottom: -2px;padding-left: 10px;">Mobile<span style="color: red;">*</span></p>
+                <div class="form-floating" style="z-index: 2;margin-bottom: 10px;border-top-left-radius: 0;border-top-right-radius: 0;">
+                    <input type="tel" name="mobile" pattern="[0-9]{10}"class="form-control" id="mob" placeholder="9876543210" required>
+                </div>
+                <button type="submit" style="margin-top:5px;" id="btn123" class="btn btn-primary">Sign up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
